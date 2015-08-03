@@ -13,7 +13,7 @@ Demo app for Mac and Windows using EosSyncLib to display Eos show data
 
 # Dependencies
 
-- Requires EosSyncLib
+- Requires [EosSyncLib](https://github.com/ElectronicTheatreControlsLabs/EosSyncLib)
 - Requires [Qt 4.8.1](https://download.qt.io/archive/qt/4.8/4.8.1/)
 
 
