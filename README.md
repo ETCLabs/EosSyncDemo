@@ -1,5 +1,5 @@
 # EosSyncDemo
-Demo app for PC and Mac using EosSyncLib to display Eos show data
+Demo app for Mac and Windows using EosSyncLib to display Eos show data
 
 ![screenshot](https://raw.githubusercontent.com/ElectronicTheatreControlsLabs/Downloads/master/Images/EosSyncDemo_Screenshot.png)
 
