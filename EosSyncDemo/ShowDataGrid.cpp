@@ -82,15 +82,20 @@ void ShowDataDetails::Update(const EosSyncData::TARGETLIST_DATA &targetListData)
 	std::string stdStr;
 	for(EosSyncData::TARGETLIST_DATA::const_iterator i=targetListData.begin(); i!=targetListData.end(); i++)
 	{
-		int listId = i->first;
-		const EosTargetList *targetList = i->second;
-		const EosTargetList::TARGETS &targets = targetList->GetTargets();
-
 		EosTarget::EnumEosTargetType type = static_cast<EosTarget::EnumEosTargetType>(m_TargetType);
 
+		int listId = i->first;
+		if(type==EosTarget::EOS_TARGET_CUE && listId<=0 && targetListData.size()>1)
+			continue;
+
+		const EosTargetList *targetList = i->second;
+		const EosTargetList::TARGETS &targets = targetList->GetTargets();		
+
 		qStr = EosTarget::GetNameForTargetType(type);
-		if(type == EosTarget::EOS_TARGET_CUE)
+		if(type==EosTarget::EOS_TARGET_CUE && listId>0)
 			qStr.append( QString(" list %1").arg(listId) );
+		if( !text.isEmpty() )
+			text.append("\n");
 		text.append(qStr);
 		ShowDataGrid::TimestampToStr(targetList->GetStatus().GetTimestamp(), qStr);
 		text.append( QString(" (%1)").arg(qStr) );
