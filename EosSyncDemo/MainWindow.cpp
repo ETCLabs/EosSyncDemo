@@ -32,7 +32,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#define APP_VERSION			"0.2"
+#define APP_VERSION			"0.3"
 #define SETTING_IP			"IP"
 #define SETTING_PORT		"Port"
 #define SETTING_SEND_TEXT	"SendText"
